@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import parkingData from '../../data/parkingData.json';
-import type { Spot } from '../../types/parking';
+import type { Spot, SpotTypeKey } from '../../types/parking';
 import { useParams } from 'react-router';
 
 /**
@@ -18,6 +18,7 @@ const FloorEdit = (): React.JSX.Element => {
         return <div>Floor not found.</div>;
     }
     const [spots, setSpots] = useState(floor.spots);
+    const [isAddSpotFormVisible, setIsAddSpotFormVisible] = useState(false);
 
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement>,
@@ -31,13 +32,75 @@ const FloorEdit = (): React.JSX.Element => {
                     : s
             )
         );
+    }; 
+    
+    const getNextSpotId = () => {
+        if (spots.length === 0) {
+            return `${floor.floorNumber}A`;
+        }
+        const lastSpot = spots[spots.length - 1];
+        const lastId = lastSpot.id;
+        const lastChar = lastId.slice(-1);
+        const nextChar = String.fromCharCode(lastChar.charCodeAt(0) + 1);
+        return `${floor.floorNumber}${nextChar}`;
+    };
+
+    const [newSpotId, setNewSpotId] = useState(getNextSpotId());
+    const [newSpotType, setNewSpotType] = useState<SpotTypeKey>('' as SpotTypeKey);
+
+    useEffect(() => {
+        setNewSpotId(getNextSpotId());
+    }, [spots]);
+
+    const handleAddSpot = () => {
+        const newSpot: Spot = {
+            id: newSpotId,
+            isAvailable: true,
+            isFree: false,
+            type: newSpotType
+        };
+        setSpots(prevSpots => [...prevSpots, newSpot]);
     };
     
     return (
         <div className='spot-display'>
             <header>
                 <h2>Floor {floor.floorNumber}</h2>
-            </header>   
+            </header>
+            <section className='spot-add--section'>
+                <h3 className="toggle-add-spot--form" onClick={() => setIsAddSpotFormVisible(!isAddSpotFormVisible)}>
+                    {isAddSpotFormVisible ? 'Cancel' : 'Add Spot'}
+                </h3>
+                {isAddSpotFormVisible && (
+                    <form
+                        onSubmit={(e) => {
+                            e.preventDefault();
+                            handleAddSpot();
+                            setIsAddSpotFormVisible(false);
+                        }}
+                        className='spot-add--form'
+                    >
+                        <label className='spot-add--id'>
+                            Spot ID: {newSpotId}
+                        </label>
+                        <label className='spot-add--type' htmlFor='spotType'>
+                            Type:
+                            <select
+                                id="spotType"
+                                value={newSpotType}
+                                onChange={e => setNewSpotType(e.target.value as SpotTypeKey)}
+                                required
+                            >
+                                <option value="" disabled>Select type</option>
+                                <option value="Compact">Compact</option>
+                                <option value="Motorcycle">Motorcycle</option>
+                                <option value="Handicapped">Handicapped</option>
+                            </select>
+                        </label>
+                        <button className="btn btn-blue" type="submit">Add Spot</button>
+                    </form>
+                )}
+            </section>
             <section className='spot-display--section'>
                 <ul>
                     {spots.map((spot) => (
