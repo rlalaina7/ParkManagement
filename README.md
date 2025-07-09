@@ -19,11 +19,11 @@ As this version uses static JSON data, the added/modified spot will disappear on
     git clone https://github.com/rlalaina7/ParkManagement.git
     ```
 2. **Install dependencies:**
+    Browse to the folder where the repository was cloned and:
     ```bash
-    cd parking-management-system
     npm install
     ```
-3. **Run the application:**
+1. **Run the application:**
     ```bash
     npm run dev
     ```
