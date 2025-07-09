@@ -2,6 +2,8 @@ import type { ParkingGarage } from '../types/parking';
 import parkingData from '../data/parkingData.json';
 import { useEffect, useState } from 'react';
 
+import SpotEdit from './Spot/SpotEdit';
+
 /**
  * Displays the parking availability summary and per-floor breakdown.
  * @component
@@ -71,6 +73,18 @@ const ParkingDisplay = () => {
                     );
                 })}
                 <h3>Ground display: {groundMessage}</h3>
+                {/* Display the edit spot for each floor here? */}
+                {parkingFloors.map(({ floorNumber, spots }) => (
+                    <div key={`spots-floor-${floorNumber}`}>
+                        <h4>Spots on Floor {floorNumber}:</h4>
+                        {spots.map(spot => (
+                            <SpotEdit
+                                key={spot.id}
+                                spotData={spot}
+                            />
+                        ))}
+                    </div>
+                ))}
             </section>
         </div>
     );
