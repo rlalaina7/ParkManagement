@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import parkingData from '../../data/parkingData.json';
-import type { Spot, SpotTypeKey } from '../../types/parking';
+import type { Spot } from '../../types/parking';
 import { useParams } from 'react-router';
 
 /**
@@ -46,13 +46,14 @@ const FloorEdit = (): React.JSX.Element => {
     };
 
     const [newSpotId, setNewSpotId] = useState(getNextSpotId());
-    const [newSpotType, setNewSpotType] = useState<SpotTypeKey>('' as SpotTypeKey);
+    const [newSpotType, setNewSpotType] = useState<string>('');
 
     useEffect(() => {
         setNewSpotId(getNextSpotId());
     }, [spots]);
 
     const handleAddSpot = () => {
+        if (!newSpotType) return;
         const newSpot: Spot = {
             id: newSpotId,
             isAvailable: true,
@@ -71,6 +72,7 @@ const FloorEdit = (): React.JSX.Element => {
                 <h3 className="toggle-add-spot--form" onClick={() => setIsAddSpotFormVisible(!isAddSpotFormVisible)}>
                     {isAddSpotFormVisible ? 'Cancel' : 'Add Spot'}
                 </h3>
+                {/* TODO: This component should be extracted from as a new component */}
                 {isAddSpotFormVisible && (
                     <form
                         onSubmit={(e) => {
@@ -88,7 +90,7 @@ const FloorEdit = (): React.JSX.Element => {
                             <select
                                 id="spotType"
                                 value={newSpotType}
-                                onChange={e => setNewSpotType(e.target.value as SpotTypeKey)}
+                                onChange={e => setNewSpotType(e.target.value)}
                                 required
                             >
                                 <option value="" disabled>Select type</option>

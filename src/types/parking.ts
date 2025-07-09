@@ -15,7 +15,7 @@ export interface Floor {
 
 export interface Spot {
     id: string;
-    type: SpotTypeKey;
+    type: string;
     isAvailable: boolean;
     isFree: boolean;
 }
@@ -23,6 +23,3 @@ export interface Spot {
 export interface DisplayBoard {
     message: string;
 }
-
-// Spot types
-export type SpotTypeKey = "Compact" | "Large" | "Handicapped" | "Motorcycle";
