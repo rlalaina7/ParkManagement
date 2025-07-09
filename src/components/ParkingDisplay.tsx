@@ -1,6 +1,7 @@
 import type { ParkingGarage } from '../types/parking';
 import parkingData from '../data/parkingData.json';
 import { useEffect, useState } from 'react';
+import { getFloorMessages } from '../utils/parkingUtils';
 
 /**
  * Displays the parking availability summary and per-floor breakdown.
@@ -12,18 +13,6 @@ import { useEffect, useState } from 'react';
 const ParkingDisplay = () => {
     const parkingGarage = parkingData.parkingGarage as ParkingGarage;
     const parkingFloors = parkingGarage.floors;
-
-    // Generate floor messages
-    const getFloorMessages = (floors: typeof parkingFloors) =>
-        floors.reduce<Record<number, string>>((acc, floor) => {
-            const availableSpotsByFloor = floor.spots.filter(spot => spot.isAvailable).length;
-            if (availableSpotsByFloor === 0) {
-                acc[floor.floorNumber] = "No spots available";
-            } else {
-                acc[floor.floorNumber] = floor.displayBoard?.message || '';
-            }
-            return acc;
-        }, {});
 
     const [floorMessages, setFloorMessages] = useState(() => getFloorMessages(parkingFloors));
     const [entranceMessage, setEntranceMessage] = useState(parkingGarage.message.entrance);
