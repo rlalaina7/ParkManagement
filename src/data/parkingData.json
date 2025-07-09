@@ -1,0 +1,51 @@
+{
+    "parkingGarage": {
+        "entranceMessage": "Welcome to the Parking Garage",
+        "floors": [
+            {
+                "floorNumber": 1,
+                "spots": [
+                    { "id": "1A", "type": "Compact"},
+                    { "id": "1B", "type": "Compact"},
+                    { "id": "1C", "type": "Compact"},
+                    { "id": "1D", "type": "Large"},
+                    { "id": "1E", "type": "Handicapped"},
+                    { "id": "1F", "type": "Compact" },
+                    { "id": "1G", "type": "Handicapped" },
+                    { "id": "1H", "type": "Motorcycle" }
+                ],
+                "displayBoard": {
+                    "message": "Welcome to Floor 1"
+                }
+            },
+            {
+                "floorNumber": 2,
+                "spots": [
+                    { "id": "2A", "type": "Compact" },
+                    { "id": "2B", "type": "Large" },
+                    { "id": "2C", "type": "Handicapped" },
+                    { "id": "2D", "type": "Motorcycle" },
+                    { "id": "2E", "type": "Handicapped" },
+                    { "id": "2F", "type": "Motorcycle" }
+                ],
+                "displayBoard": {
+                    "message": "Welcome to Floor 2"
+                }
+            },
+            {
+                "floorNumber": 3,
+                "spots": [
+                    { "id": "3A", "type": "Compact" },
+                    { "id": "3B", "type": "Large" },
+                    { "id": "3C", "type": "Handicapped" },
+                    { "id": "3D", "type": "Motorcycle"},
+                    { "id": "3E", "type": "Handicapped"},
+                    { "id": "3F", "type": "Motorcycle"}
+                ],
+                "displayBoard": {
+                    "message": "Welcome to Floor 3"
+                }
+            }
+        ]
+    }
+}
