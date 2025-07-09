@@ -74,7 +74,7 @@ const ParkingDisplay = () => {
                 })}
                 <h3>Ground display: {groundMessage}</h3>
                 {/* Display the edit spot for each floor here? */}
-                {parkingFloors.map(({ floorNumber, spots }) => (
+                {/* {parkingFloors.map(({ floorNumber, spots }) => (
                     <div key={`spots-floor-${floorNumber}`}>
                         <h4>Spots on Floor {floorNumber}:</h4>
                         {spots.map(spot => (
@@ -84,7 +84,7 @@ const ParkingDisplay = () => {
                             />
                         ))}
                     </div>
-                ))}
+                ))} */}
             </section>
         </div>
     );

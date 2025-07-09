@@ -7,8 +7,7 @@ interface SpotEditProps {
 
 
 const SpotEdit = (props: SpotEditProps): React.JSX.Element => {
-    const [spot, setSpot] = useState(props.spotData);
-
+    const [spot, ] = useState(props.spotData)
     return (
         <div>
             <p>Spot ID: {spot.id}</p>
