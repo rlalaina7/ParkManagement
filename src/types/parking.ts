@@ -1,6 +1,9 @@
 
 export interface ParkingGarage {
-    entranceMessage: string;
+    message: {
+        entrance: string;
+        ground: string;
+    };
     floors: Floor[];
 }
 

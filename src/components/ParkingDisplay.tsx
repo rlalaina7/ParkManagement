@@ -26,11 +26,21 @@ const ParkingDisplay = () => {
         }, {});
 
     const [floorMessages, setFloorMessages] = useState(() => getFloorMessages(parkingFloors));
-
+    const [entranceMessage, setEntranceMessage] = useState(parkingGarage.message.entrance);
+    const [groundMessage, setGroundMessage] = useState(parkingGarage.message.ground);
+    
     // Calculate total spots and available spots
     const allSpots = parkingFloors.flatMap(floor => floor.spots);
     const totalSpots = allSpots.length;
     const totalAvailableSpots = allSpots.filter(spot => spot.isAvailable).length;
+
+    // Update entrance and ground messages if no spots are available
+    useEffect(() => {
+        if (totalAvailableSpots === 0) {
+            setEntranceMessage("Parking Full");
+            setGroundMessage("Parking Full");
+        }
+    }, [totalAvailableSpots, parkingGarage.message.entrance, parkingGarage.message.ground]);
 
     useEffect(() => {
         setFloorMessages(getFloorMessages(parkingFloors));
@@ -45,6 +55,7 @@ const ParkingDisplay = () => {
                 <span><strong>{totalAvailableSpots}</strong> / {totalSpots} available</span>
             </header>
             <section>
+                <h3>Entrance display: {entranceMessage}</h3>
                 {parkingFloors.map(({ floorNumber, spots }) => {
                     const available = spots.filter(spot => spot.isAvailable).length;
                     return (
@@ -59,6 +70,7 @@ const ParkingDisplay = () => {
                         </div>
                     );
                 })}
+                <h3>Ground display: {groundMessage}</h3>
             </section>
         </div>
     );

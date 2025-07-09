@@ -1,6 +1,9 @@
 {
     "parkingGarage": {
-        "entranceMessage": "Welcome to the Parking Garage",
+        "message": {
+            "entrance": "Welcome to the Parking Garage",
+            "ground": "Welcome to the Ground Floor"
+        },
         "floors": [
             {
                 "floorNumber": 1,
@@ -21,13 +24,13 @@
             {
                 "floorNumber": 2,
                 "spots": [
-                    { "id": "2A", "type": "Compact", "isAvailable": true, "isFree": true },
-                    { "id": "2B", "type": "Large", "isAvailable": true, "isFree": false },
+                    { "id": "2A", "type": "Compact", "isAvailable": false, "isFree": true },
+                    { "id": "2B", "type": "Large", "isAvailable": false, "isFree": false },
                     { "id": "2C", "type": "Handicapped", "isAvailable": false, "isFree": true },
-                    { "id": "2D", "type": "Motorcycle", "isAvailable": true, "isFree": false },
-                    { "id": "2E", "type": "Handicapped", "isAvailable": true, "isFree": true },
+                    { "id": "2D", "type": "Motorcycle", "isAvailable": false, "isFree": false },
+                    { "id": "2E", "type": "Handicapped", "isAvailable": false, "isFree": true },
                     { "id": "2F", "type": "Motorcycle", "isAvailable": false, "isFree": false },
-                    { "id": "2B", "type": "Large", "isAvailable": true, "isFree": false }
+                    { "id": "2B", "type": "Large", "isAvailable": false, "isFree": false }
                 ],
                 "displayBoard": {
                     "message": "Welcome to Floor 2"
