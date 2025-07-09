@@ -13,6 +13,7 @@ export interface Floor {
 export interface Spot {
     id: string;
     type: SpotTypeKey;
+    isAvailable: boolean;
 }
 
 export interface DisplayBoard {
