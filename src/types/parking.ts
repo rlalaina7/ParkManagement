@@ -14,6 +14,7 @@ export interface Spot {
     id: string;
     type: SpotTypeKey;
     isAvailable: boolean;
+    isFree: boolean;
 }
 
 export interface DisplayBoard {

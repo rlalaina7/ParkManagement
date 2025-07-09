@@ -5,14 +5,14 @@
             {
                 "floorNumber": 1,
                 "spots": [
-                    { "id": "1A", "type": "Compact", "isAvailable": false },
-                    { "id": "1B", "type": "Compact", "isAvailable": false },
-                    { "id": "1C", "type": "Compact", "isAvailable": false },
-                    { "id": "1D", "type": "Large", "isAvailable": false },
-                    { "id": "1E", "type": "Handicapped", "isAvailable": false },
-                    { "id": "1F", "type": "Compact", "isAvailable": false },
-                    { "id": "1G", "type": "Handicapped", "isAvailable": false },
-                    { "id": "1H", "type": "Motorcycle", "isAvailable": false }
+                    { "id": "1A", "type": "Compact", "isAvailable": false, "isFree": true },
+                    { "id": "1B", "type": "Compact", "isAvailable": false, "isFree": true },
+                    { "id": "1C", "type": "Compact", "isAvailable": false, "isFree": true },
+                    { "id": "1D", "type": "Large", "isAvailable": false, "isFree": false },
+                    { "id": "1E", "type": "Handicapped", "isAvailable": false, "isFree": true },
+                    { "id": "1F", "type": "Compact", "isAvailable": false, "isFree": true },
+                    { "id": "1G", "type": "Handicapped", "isAvailable": false, "isFree": true },
+                    { "id": "1H", "type": "Motorcycle", "isAvailable": false, "isFree": false }
                 ],
                 "displayBoard": {
                     "message": "Welcome to Floor 1"
@@ -21,13 +21,13 @@
             {
                 "floorNumber": 2,
                 "spots": [
-                    { "id": "2A", "type": "Compact", "isAvailable": true },
-                    { "id": "2B", "type": "Large", "isAvailable": true },
-                    { "id": "2C", "type": "Handicapped", "isAvailable": false },
-                    { "id": "2D", "type": "Motorcycle", "isAvailable": true },
-                    { "id": "2E", "type": "Handicapped", "isAvailable": true },
-                    { "id": "2F", "type": "Motorcycle", "isAvailable": false },
-                    { "id": "2B", "type": "Large", "isAvailable": true }
+                    { "id": "2A", "type": "Compact", "isAvailable": true, "isFree": true },
+                    { "id": "2B", "type": "Large", "isAvailable": true, "isFree": false },
+                    { "id": "2C", "type": "Handicapped", "isAvailable": false, "isFree": true },
+                    { "id": "2D", "type": "Motorcycle", "isAvailable": true, "isFree": false },
+                    { "id": "2E", "type": "Handicapped", "isAvailable": true, "isFree": true },
+                    { "id": "2F", "type": "Motorcycle", "isAvailable": false, "isFree": false },
+                    { "id": "2B", "type": "Large", "isAvailable": true, "isFree": false }
                 ],
                 "displayBoard": {
                     "message": "Welcome to Floor 2"
@@ -36,12 +36,12 @@
             {
                 "floorNumber": 3,
                 "spots": [
-                    { "id": "3A", "type": "Compact", "isAvailable": true },
-                    { "id": "3B", "type": "Large", "isAvailable": false },
-                    { "id": "3C", "type": "Handicapped", "isAvailable": false },
-                    { "id": "3D", "type": "Motorcycle", "isAvailable": false },
-                    { "id": "3E", "type": "Handicapped", "isAvailable": false },
-                    { "id": "3F", "type": "Motorcycle", "isAvailable": false }
+                    { "id": "3A", "type": "Compact", "isAvailable": true, "isFree": true },
+                    { "id": "3B", "type": "Large", "isAvailable": false, "isFree": false },
+                    { "id": "3C", "type": "Handicapped", "isAvailable": false, "isFree": true },
+                    { "id": "3D", "type": "Motorcycle", "isAvailable": false, "isFree": false },
+                    { "id": "3E", "type": "Handicapped", "isAvailable": false, "isFree": true },
+                    { "id": "3F", "type": "Motorcycle", "isAvailable": false, "isFree": false }
                 ],
                 "displayBoard": {
                     "message": "Welcome to Floor 3"
