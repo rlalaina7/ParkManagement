@@ -6,13 +6,13 @@
                 "floorNumber": 1,
                 "spots": [
                     { "id": "1A", "type": "Compact", "isAvailable": false },
-                    { "id": "1B", "type": "Compact", "isAvailable": true },
-                    { "id": "1C", "type": "Compact", "isAvailable": true },
+                    { "id": "1B", "type": "Compact", "isAvailable": false },
+                    { "id": "1C", "type": "Compact", "isAvailable": false },
                     { "id": "1D", "type": "Large", "isAvailable": false },
-                    { "id": "1E", "type": "Handicapped", "isAvailable": true },
-                    { "id": "1F", "type": "Compact", "isAvailable": true },
+                    { "id": "1E", "type": "Handicapped", "isAvailable": false },
+                    { "id": "1F", "type": "Compact", "isAvailable": false },
                     { "id": "1G", "type": "Handicapped", "isAvailable": false },
-                    { "id": "1H", "type": "Motorcycle", "isAvailable": true }
+                    { "id": "1H", "type": "Motorcycle", "isAvailable": false }
                 ],
                 "displayBoard": {
                     "message": "Welcome to Floor 1"
