@@ -10,7 +10,7 @@
   @apply p-4 bg-white shadow rounded-lg col-span-3 lg:col-span-1;
 }
 
-.parking-display .parking-display--section {
+.parking-display--section {
   @apply p-4 bg-white rounded-lg col-span-3 lg:col-span-2;
 }
 

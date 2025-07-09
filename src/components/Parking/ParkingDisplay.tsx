@@ -1,7 +1,9 @@
+import { useEffect, useState } from 'react';
 import type { ParkingGarage } from '../../types/parking';
 import parkingData from '../../data/parkingData.json';
-import { useEffect, useState } from 'react';
+
 import { getFloorMessages } from '../../utils/parkingUtils';
+import { Link } from 'react-router-dom';
 
 /**
  * Displays the parking availability summary and per-floor breakdown.
@@ -49,17 +51,19 @@ const ParkingDisplay = () => {
                     {parkingFloors.map(({ floorNumber, spots }) => {
                         const available = spots.filter(spot => spot.isAvailable).length;
                         return (
-                            <div key={floorNumber} className='parking-display--card'>
-                                <h3 className='parking-display--card-title'>
-                                    Floor {floorNumber}:
-                                </h3>
-                                <span><strong>{available}</strong> / {spots.length} available</span>
-                                {floorMessages[floorNumber] && (
-                                    <p className='parking-display--card-message'>
-                                        <strong>{floorMessages[floorNumber]}</strong>
-                                    </p>
-                                )}
-                            </div>
+                            <Link to={`/floor/${floorNumber}`} className='parking-display--card-link' key={floorNumber}>
+                                <div className='parking-display--card'>
+                                    <h3 className='parking-display--card-title'>
+                                        Floor {floorNumber}:
+                                    </h3>
+                                    <span><strong>{available}</strong> / {spots.length} available</span>
+                                    {floorMessages[floorNumber] && (
+                                        <p className='parking-display--card-message'>
+                                            <strong>{floorMessages[floorNumber]}</strong>
+                                        </p>
+                                    )}
+                                </div>
+                            </Link>
                         );
                     })}
                 </div>

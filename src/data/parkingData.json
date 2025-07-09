@@ -30,7 +30,7 @@
                     { "id": "2D", "type": "Motorcycle", "isAvailable": false, "isFree": false },
                     { "id": "2E", "type": "Handicapped", "isAvailable": false, "isFree": true },
                     { "id": "2F", "type": "Motorcycle", "isAvailable": false, "isFree": false },
-                    { "id": "2B", "type": "Large", "isAvailable": false, "isFree": false }
+                    { "id": "2G", "type": "Large", "isAvailable": false, "isFree": false }
                 ],
                 "displayBoard": {
                     "message": "Welcome to Floor 2"
