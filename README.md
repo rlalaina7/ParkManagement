@@ -16,7 +16,7 @@ As this version uses static JSON data, the added/modified spot will disappear on
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/parking-management-system.git
+    git clone https://github.com/rlalaina7/ParkManagement.git
     ```
 2. **Install dependencies:**
     ```bash
@@ -25,8 +25,9 @@ As this version uses static JSON data, the added/modified spot will disappear on
     ```
 3. **Run the application:**
     ```bash
-    npm start
+    npm run dev
     ```
+Then go to: http://localhost:5173/
 
 ## Technologies Used
 
