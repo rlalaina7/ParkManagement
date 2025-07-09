@@ -1,0 +1,29 @@
+.spot-display {
+    @apply w-screen h-screen bg-gray-100 p-8;
+}
+
+.spot-display header {
+    @apply w-full;
+    margin: 0 auto;
+}
+
+.spot-display--section {
+    @apply rounded-lg w-full h-full;
+    margin: 0 auto;
+}
+
+.spot-display--section ul {
+    @apply grid grid-cols-3 gap-4;
+}
+
+.spot-details-form {
+    @apply flex flex-col gap-4 pt-5;
+}
+
+.spot-details-form input {
+    @apply ml-2;
+}
+
+.spot-display--card {
+    @apply relative overflow-hidden rounded-lg mb-2 border border-gray-300 bg-white select-none hover:shadow hover:shadow-teal-200 p-2 flex flex-col;
+}

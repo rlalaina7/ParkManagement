@@ -1,6 +1,7 @@
 @import "tailwindcss";  
 
 @import './components/Parking/parkingDisplay.css';
+@import './components/Floor/floor.css';
 
 h2 {
   @apply px-4 py-2 rounded-md bg-slate-500 text-white font-semibold hover:bg-slate-700;
